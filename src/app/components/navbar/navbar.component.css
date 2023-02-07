@@ -1,0 +1,98 @@
+.navbar{
+    width: 100%;
+    height: 100px;
+    background-color:black;
+    display: flex;
+}
+.logo{
+    width: 80%;
+    color: white;
+    display: flex;
+    padding-left: 5%;
+}
+.logo-txt{
+    width: 90%;
+    font-family: 'Oswald', sans-serif;
+    padding-left: 0.4% ;
+}
+.logo-img{
+    width: 5%;
+    background-image: url(../../../assets/images/3dglasses.png);
+    background-position: center;
+    background-size: 90%;
+    background-repeat: no-repeat;
+}
+.logo-img > img{
+    width: 100%;
+    height: 80%;
+}
+.menu{
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.divBtnCart {
+    width: 20%;
+    height: 100%;
+}
+.divBtnCart > button{
+    background-image: url(../../../assets/images/shopping-cart.png);
+    background-position: center;
+    background-size: 60%;
+    color: rgb(193, 7, 7);
+    background-repeat: no-repeat;
+    border: none;
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    text-align: center;
+   
+}
+.divBtnCart > button > p{
+    margin: 0%;
+    width: auto;
+    padding-left: 20%;
+    box-sizing: border-box;
+    font-size: 5px;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+   
+}
+.divBtnCart > button:hover{
+    background-size: 69%;
+}
+.divSearch {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    width: 80%;
+    height: 100%;
+}
+.divSearch > input{
+    width: 80%;
+    height: 40%;
+    border: none;
+    border-bottom: 1px solid rgb(193, 7, 7);
+    background-color: transparent;
+    color: rgb(193, 7, 7);
+    font-family: 'Lexend', sans-serif;
+}
+.divSearch > input{
+    outline: none;
+}
+.divSearch > button{
+    background-image: url(../../../assets/images/find.png);
+    background-position: center;
+    background-size: 52%;
+    background-repeat: no-repeat;
+    border: none;
+    width: 20%;
+    height: 100%;
+    background-color:transparent;
+}
+.divSearch > button:hover{
+    background-size: 55%;
+}

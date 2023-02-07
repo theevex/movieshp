@@ -1,0 +1,27 @@
+<div class="navbar">
+    <div class="logo">
+        <div class="logo-img" routerLink="/home">
+        </div>
+        <div class="logo-txt">
+            <h1 routerLink="/home"> MVs</h1>
+        </div>
+
+
+    </div>
+    <div class="menu">
+        <div class="divSearch">
+            <input type="text">
+            <button></button>
+        </div>
+
+        <div class="divBtnCart">
+            <button routerLink="/cart">
+                <p>{{sumCart}}</p>
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<router-outlet></router-outlet>

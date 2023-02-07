@@ -1,0 +1,38 @@
+<div class="imgcover">
+    <p> fun is a choice, Choose your own fun.</p>
+    <button routerLink="/movies"> see more..</button>
+</div>
+<div>
+
+    <div class="trandingMovies">
+        <div class="divTextTranding">
+            <p> Trending </p>
+        </div>
+        <div class="divMoveis">
+            <div class="divMovieCard" *ngFor=" let item of master.movies">
+                <div class="divImageMovie">
+                    <img src={{url.image+item.poster_path}}>
+                </div>
+                <div class="divNameMovie">
+                    <p> {{item.title}} </p>
+                    <p id="vote_average"> vote average : {{item.vote_average}} </p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="bannerpromo">
+
+        <div class="child-bannerpromo">
+            <div class="backdrop">
+                <p> Summer Sale</p>
+                <p> up to </p>
+                <label class="per"> 20%off</label>
+                <button routerLink="/movies">SHOP NOW</button>
+            </div>
+        
+        </div>
+
+    </div>
+</div>
+
+<router-outlet></router-outlet>

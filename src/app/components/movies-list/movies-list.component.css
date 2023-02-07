@@ -1,0 +1,121 @@
+.movieList {
+    width: 100%;
+    padding: 5%;
+    padding-top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+}
+
+.movieList-head {
+    background-image: url(../../../assets/images/theater.jpg);
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    width: 100%;
+    height: 30vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+}
+
+.child-movieList-head {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(20%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.child-movieList-head>p {
+    text-align: center;
+    font-size: 2.5rem;
+    font-family: 'Lexend', sans-serif;
+}
+
+.movieList-body {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    font-family: 'Lexend', sans-serif;
+}
+
+.divMovieCard {
+    width: 15%;
+    height: 100%;
+    margin: 1%;
+    align-self: start;
+}
+
+.imageMovie {
+    width: 100%;
+    height: 80%;
+}
+
+.imageMovie>img {
+    width: 100%;
+}
+
+.nameMovie {
+    align-self: flex-end;
+    display: flex;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.nameMovie>p {
+    width: 80%;
+    text-align: center;
+    margin: 0%;
+    margin-top: 5%;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+}
+.nameMovie> input{
+    width: 30%;
+    text-align: center;
+    margin: 0%;
+    margin-top: 5%;
+    font-family: 'Lexend', sans-serif;
+    background-color: transparent;
+    color: white;
+    border: none;
+    
+}
+.nameMovie>input:focus{
+    outline: none;
+}
+.nameMovie> input:focus{
+    border-bottom: 1px solid red;
+}
+
+.nameMovie>input::-webkit-outer-spin-button,
+.nameMovie>input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.nameMovie>button {
+    background-image: url(../../../assets/images/add-to-cart.png);
+    background-position:center;
+    background-size: 50%;
+    background-repeat: no-repeat;
+    border: none;
+    width: 20%;
+    height: 40px;
+    background-color: transparent;
+}
+.nameMovie>button:hover {
+ border: 2px solid rgba(193, 7, 7, 0.609) ;
+ border-radius: 50%;
+}
+.hidedivcart{
+    display: none;
+}

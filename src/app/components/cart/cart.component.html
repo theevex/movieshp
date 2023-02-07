@@ -1,0 +1,69 @@
+<div class="Cart">
+    <div class="Cart-head">
+        <div class="child-Cart-head">
+            <p> Cart </p>
+        </div>
+
+
+    </div>
+
+    <div class="Cart-body">
+        <div class="child-Cart-body"> 
+            <div class="Cart-body-head">
+            <div id="dmovie">Movies</div>
+            <div>Amount</div>
+            <div>Price</div>
+        </div>
+            <div class="list-Cart" *ngFor="let item of dataMovies| keyvalue">
+                <div class="nameMovie">
+                    <p> {{item.value["name"]}} </p>
+
+                </div>
+
+                <div class="amount">
+                    <p> x {{item.value["amount"]}}
+
+                    </p>
+                </div>
+                <div class="price">
+                    {{item.value["price"]}} 
+                </div>
+
+
+            </div>
+            
+            <div class="divtotal">
+                    <div class="child-divtotal">
+                    <p> SubTotal &nbsp; : </p>
+                    <p id="price">{{ Formatnum}} ฿</p>
+                    </div>
+                    <div class="child-divtotal"> 
+                        <p> Amount &nbsp; :</p>
+                        <p id="price"> x {{ countCart}} </p>
+                    </div>
+                   
+                    <div class="child-divtotal">
+                        <p> Discount ({{discount}}) &nbsp; : </p>
+                        <p id="price"> - {{Formatcalper}} ฿</p>
+                    </div>
+
+                    <div class="child-divtotal"> <p> Order Total &nbsp; :</p>
+                        <p id="price">{{ FormattotalPriceaftercalper}} ฿</p></div>
+
+               
+            </div>
+
+        </div>
+        <div class="btncart">
+            <button id="checkoutbtn"> Checkout</button>
+            <button id="clearcartbtn" (click)="clearLocalStorage()"> ClearCart</button>
+        </div>
+
+    </div>
+
+
+
+
+
+
+</div>
