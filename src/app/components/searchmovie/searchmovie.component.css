@@ -1,0 +1,175 @@
+.movieList {
+    width: 100%;
+    padding: 5%;
+    padding-top: 0%;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+    background-color: black;
+    color: white;
+    box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
+}
+
+.texthead{
+    width: 100%;
+    padding: 5%;
+    box-sizing: border-box;
+}
+
+.movieList-body {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.divMovieCard {
+    width: 15%;
+    max-height: 900px;
+    margin: 1%;
+    display: flex;
+    flex-direction: column;
+}
+
+.imageMovie {
+    width: 100%;
+    max-height: 100%;
+    margin: auto 0%;
+}
+
+.imageMovie>img {
+    width: 100%;
+    height: 100%;
+}
+
+.img-null{
+    opacity: 0.3;
+    background-color: rgb(113, 19, 19);
+    border-radius: 50px;
+    
+}
+
+
+.nameMovie {
+    justify-self: end;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    margin-top: 1%;
+}
+
+.nameMovie>p {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin: 0%;
+    margin-top: 5%;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    display: -webkit-box;
+}
+
+.nameMovie>input {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    margin: 0%;
+    font-family: 'Lexend', sans-serif;
+    background-color: transparent;
+    color: white;
+    border:none;
+
+}
+
+.nameMovie>input:focus {
+    outline: none;
+}
+
+.nameMovie>input:focus {
+    border-bottom: 1px solid red;
+    box-sizing: border-box;
+}
+
+.nameMovie>input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+.nameMovie>button {
+    margin-top: 5%;
+    border: none;
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+    background-image: url(../../../assets/images/add-to-cart.png);
+    background-size: 55%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-color: transparent;
+    border: none;
+    color: white;
+    font-family: 'Lexend', sans-serif;
+    font-size: 12px;
+}
+
+.nameMovie>button:hover {
+    border: 2px solid rgba(116, 4, 4, 0.609);
+    background-color:rgba(193, 7, 7, 0.609);
+    font-size: 13px;
+}
+
+.hidedivcart {
+    display: none;
+}
+.btnchangepage{
+    width: 100%;
+    margin-top: 5%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn>p{
+    font-family: 'Lexend', sans-serif;
+    margin: 0%;
+    text-align: center;
+    width: 100px;
+
+}
+.btn>button {
+    width: 100px;
+    height: 50px;
+    box-sizing: border-box;
+    margin-bottom: 0%;
+    border: 1px solid rgb(113, 19, 19);
+    background-color: transparent;
+    color: rgb(113, 19, 19);;
+    font-family: 'Lexend', sans-serif;
+}
+.btn > button:hover{
+    color: red;
+    border:1px solid red;
+}
+
+.ictop>img{
+    max-width: 40px;
+    background-color:rgb(113, 19, 19);
+    border-radius: 50%;
+}
+.ictop>img:hover{
+    background-color:red;
+}

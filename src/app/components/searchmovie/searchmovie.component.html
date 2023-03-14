@@ -1,0 +1,57 @@
+<div class="movieList">
+    <div class="texthead">
+        <h1>You searched for : {{ datasearch}}</h1>
+    </div>
+
+    <ng-template [ngIf]="totalresult > 0" [ngIfElse]="resultnull">
+          <div class="movieList-body" id="divmovielist">
+        <div class="divMovieCard" *ngFor=" let itemsearch of data.moviesearch">
+            <div class="imageMovie">
+                <ng-template [ngIf]="itemsearch.poster_path != null " [ngIfElse]="imgnull">
+                     
+                      <img src={{url.image+itemsearch.poster_path}}>
+                </ng-template>
+                <ng-template #imgnull>
+                    <img class="img-null" src="../../../assets/images/emonull.png" />
+                </ng-template>
+               
+            </div>
+            <div class="nameMovie">
+                <p #nameMovie id={{itemsearch.title}}>{{itemsearch.title}} </p>
+                <button (click)="passData(nameMovie.id)"></button>
+
+            </div>
+
+        </div>
+    </div>
+    </ng-template>
+    <ng-template #resultnull>
+        <div>
+            <p> Sorry, we did not find anything matching your search. Please try again. </p>
+        </div>
+    </ng-template>
+
+  
+
+    <div class="btnchangepage">
+        <div class="btn"> 
+            <ng-template [ngIf]="cvnum > 1" [ngIfElse]="hidebtnprev">
+                <button (click)="prevpage()"> Prev </button>
+            </ng-template>
+            <ng-template #hidebtnprev>
+            </ng-template>
+            <p>Page {{cvnum}} - {{totalpage}}</p>
+            <ng-template [ngIf]=" cvnum < totalpage" [ngIfElse]="hidebtnnext">
+                <button (click)="nextpage()"> next </button>
+            </ng-template>
+            <ng-template #hidebtnnext>
+            </ng-template>
+        </div>
+    </div>
+
+
+
+    <div class="hidedivcart"> <app-cart [dataMovie]="Movie"></app-cart></div>
+
+
+</div>

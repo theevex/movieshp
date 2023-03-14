@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { CartComponent } from './cart.component';
+import { SearchmovieComponent } from './searchmovie.component';
 
-describe('CartComponent', () => {
-  let component: CartComponent;
-  let fixture: ComponentFixture<CartComponent>;
+describe('SearchmovieComponent', () => {
+  let component: SearchmovieComponent;
+  let fixture: ComponentFixture<SearchmovieComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ CartComponent ]
+      declarations: [ SearchmovieComponent ]
     })
     .compileComponents();
 
-    fixture = TestBed.createComponent(CartComponent);
+    fixture = TestBed.createComponent(SearchmovieComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });
