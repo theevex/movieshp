@@ -8,61 +8,79 @@
     </div>
 
     <div class="Cart-body">
-        <div class="child-Cart-body"> 
-            <div class="Cart-body-head">
-            <div id="dmovie">Movies</div>
-            <div>Amount</div>
-            <div>Price</div>
-        </div>
-            <div class="list-Cart" *ngFor="let item of dataMovies| keyvalue">
-                <div class="nameMovie">
-                    <p> {{item.value["name"]}} </p>
-
+        <ng-template [ngIf]="countCart > 0" [ngIfElse]="cartempty">
+            <div class="child-Cart-body">
+                <div class="Cart-body-head">
+                    <div id="dmovie">Movies</div>
+                    <div>Amount</div>
+                    <div>Price</div>
                 </div>
+                <div class="divlistCart">
+                    <div class="list-Cart" *ngFor="let item of dataMovies| keyvalue">
+                        <div class="nameMovie">
+                            <p #namemv id="{{item.value['name']}}"> {{item.value["name"]}} </p>
 
-                <div class="amount">
-                    <p> x {{item.value["amount"]}}
+                        </div>
 
-                    </p>
-                </div>
-                <div class="price">
-                    {{item.value["price"]}} 
-                </div>
+                        <div class="amount">
+                            <button class="btnam" (click)="decreaseAmount(namemv.id)"> - </button>
+                            <p> {{item.value["amount"]}} </p>
+                            <button class="btnam" (click)="increaseAmount(namemv.id)"> + </button>
+                        </div>
+                        <div class="price">
+                            <input id="pricem" #priceMovies type="number"
+                                (keyup)="addPrice($event,priceMovies.value,namemv.id)" value="{{item.value['price']}}">
+                        </div>
 
 
-            </div>
-            
-            <div class="divtotal">
-                    <div class="child-divtotal">
-                    <p> SubTotal &nbsp; : </p>
-                    <p id="price">{{ Formatnum}} ฿</p>
                     </div>
-                    <div class="child-divtotal"> 
+                </div>
+
+
+                <div class="divtotal">
+                    <div class="child-divtotal">
+                        <p> SubTotal &nbsp; : </p>
+                        <p id="price">{{ Formatnum}} ฿</p>
+                    </div>
+                    <div class="child-divtotal">
                         <p> Amount &nbsp; :</p>
                         <p id="price"> x {{ countCart}} </p>
                     </div>
-                   
+
                     <div class="child-divtotal">
                         <p> Discount ({{discount}}) &nbsp; : </p>
                         <p id="price"> - {{Formatcalper}} ฿</p>
                     </div>
 
-                    <div class="child-divtotal"> <p> Order Total &nbsp; :</p>
-                        <p id="price">{{ FormattotalPriceaftercalper}} ฿</p></div>
+                    <div class="child-divtotal">
+                        <p> Order Total &nbsp; :</p>
+                        <p id="price">{{ FormattotalPriceaftercalper}} ฿</p>
+                    </div>
+                </div>
+            </div>
+            <div class="btncart">
+                <button id="checkoutbtn" (click)="checkoutCart()"> Checkout</button>
+                <button id="clearcartbtn" (click)="clearLocalStorage()"> ClearCart</button>
+            </div>
+        </ng-template>
 
-               
+        <ng-template #cartempty>
+            <div class="cartempty">
+                <div class="divimg">
+                    <img src="../../../assets/images/empty.png" />
+                </div>
+
+                <p> Your shopping cart is empty.</p>
             </div>
 
-        </div>
-        <div class="btncart">
-            <button id="checkoutbtn"> Checkout</button>
-            <button id="clearcartbtn" (click)="clearLocalStorage()"> ClearCart</button>
-        </div>
+        </ng-template>
 
     </div>
 
 
-
+    <div class="popup" [ngStyle]="{'display':popup }">
+        <app-popup  (closePopup)="funcpopup($event)"></app-popup>
+    </div>
 
 
 

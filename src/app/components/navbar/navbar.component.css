@@ -67,7 +67,7 @@
     display: flex;
     flex-direction: row;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     width: 80%;
     height: 100%;
 }
@@ -79,9 +79,8 @@
     background-color: transparent;
     color: rgb(193, 7, 7);
     font-family: 'Lexend', sans-serif;
-}
-.divSearch > input{
     outline: none;
+    animation: inputsearch 2s ;
 }
 .divSearch > button{
     background-image: url(../../../assets/images/find.png);
@@ -95,4 +94,11 @@
 }
 .divSearch > button:hover{
     background-size: 55%;
+}
+
+
+
+@keyframes inputsearch{
+    from {width: 0%;}
+    to { width: 80%;}
 }

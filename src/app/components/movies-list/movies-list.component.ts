@@ -1,26 +1,36 @@
-import { Component, OnInit } from '@angular/core';
+import {  Component, OnInit } from '@angular/core';
 import { APIService } from 'src/app/service/api.service';
 
 @Component({
   selector: 'app-movies-list',
   templateUrl: './movies-list.component.html',
-  styleUrls: ['./movies-list.component.css']
+  styleUrls: ['./movies-list.component.css'],
+
 })
 export class MoviesListComponent implements OnInit {
   Movie: string = "";
-  MoviePrice: number = 0;
-  constructor(private api: APIService) {
-
-  }
+  Page = localStorage.getItem('pagenumber')
+  Pagenumber: string = "";
+  cvnum = Number(this.Page);
+  totalPage:number=0;
+  FormatTotalPage:any; 
 
 
   ngOnInit(): void {
-    this.Main.gatPoppularMovies()
+    this.Main.getPoppularMovies()
   }
+
+
+  constructor(private api: APIService) {
+    console.log(this.Page)
+  }
+
+
+
 
   url = {
     image: 'https://image.tmdb.org/t/p/w500',
-    moviespopular: 'https://api.themoviedb.org/3/movie/popular?api_key=d0d41b551324726904e1e52aac39835c&language=en-US&page=1',
+    moviespopular: 'https://api.themoviedb.org/3/movie/popular?api_key=d0d41b551324726904e1e52aac39835c&language=en-US&page=',
   };
 
   data = {
@@ -28,49 +38,59 @@ export class MoviesListComponent implements OnInit {
   };
 
   Main = {
-    gatPoppularMovies: () => {
-
-      this.api.get(this.url.moviespopular).subscribe(res => {
+    getPoppularMovies: () => {
+      this.api.get(this.url.moviespopular + this.Page).subscribe(res => {
         this.data.poppulaMovies = res.results
-        // console.log(res)
+        this.totalPage = res.total_pages
+        this.FormatTotalPage = new Intl.NumberFormat().format(this.totalPage)
       }, err => {
         console.log(err.error);
       });
     },
   };
 
+
   passData(nameMovie: string) {
     this.Movie = nameMovie
   }
-  addPrice(price: string,nameM:string) {
-      let Price = 0;
-      Price = parseInt(price)
-      console.log(Price)
-      this.findDataPrice(Price,nameM)
-  }
 
-  findDataPrice(p:number,name:string){
-
-    const arrMovies = JSON.parse(localStorage.getItem('arrDataCart')!)
-    arrMovies.forEach((element: any,i:number) => {
-      if(name === element["name"]){
-       console.log("elep",element["price"])
-       element["price"] = p
-       const cvarrMovies = JSON.stringify(arrMovies)
-    localStorage.setItem('arrDataCart', cvarrMovies)
-    console.log("arrMovies:",arrMovies,cvarrMovies)
-      }
-   
-
-    });
-
-
-     setTimeout(() => {
+  prevpage() {
+    let cvPagenumber = Number(this.Page)
+    // console.log(cvPagenumber)
+    let Pagen = cvPagenumber;
+    if (cvPagenumber > 1) {
+      Pagen -= 1
+      this.Pagenumber = JSON.stringify(Pagen)
+      localStorage.setItem('pagenumber', this.Pagenumber)
+      setTimeout(() => {
         window.location.reload();
-      }, 2000);
+      }, 1000);
+    }
+
   }
+
+
+  nextpage() {
+    let cvPagenumber = Number(this.Page)
+
+    const Pagen = cvPagenumber += 1
+    this.Pagenumber = JSON.stringify(Pagen)
+    localStorage.setItem('pagenumber', this.Pagenumber)
+    //  console.log( cvPagenumber)
+    setTimeout(() => {
+      window.location.reload();
+    }, 1000);
+  }
+  totop() {
+    window.scrollTo(0, 0);
+  }
+
+
+
+
 
 }
+
 
 
 

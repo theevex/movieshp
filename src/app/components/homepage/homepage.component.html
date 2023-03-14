@@ -1,3 +1,4 @@
+
 <div class="imgcover">
     <p> fun is a choice, Choose your own fun.</p>
     <button routerLink="/movies"> see more..</button>
@@ -31,8 +32,11 @@
             </div>
         
         </div>
+        <div>
+            <input #ipbank type=number  maxlength="7"/>
+            <button (click)="cal(ipbank.value)"> send </button>
+
+        </div>
 
     </div>
 </div>
-
-<router-outlet></router-outlet>
