@@ -23,6 +23,7 @@ export class PopupComponent {
   Intervalqr:any;
 
   constructor() {
+        this.cvarrPrice = JSON.parse(this.arrPrice!)
   }
 
   @Output() closePopup = new EventEmitter();
@@ -43,7 +44,6 @@ export class PopupComponent {
     this.displaydivqr = 'block'
     this.displaydivpromtpay = 'none'
     const mobileNumber = '095-594-1260'
-    this.cvarrPrice = JSON.parse(this.arrPrice!)
     this.totalOrder = this.cvarrPrice[3]
     const amount = this.totalOrder
     const payload = generatePayload(mobileNumber, { amount })
@@ -72,29 +72,12 @@ export class PopupComponent {
         this.divchqr.nativeElement.remove();
        this.displaydivqr = 'none'
         this.displaydivpromtpay = 'auto';
-        // this.divqr.nativeElement.insertAdjacentHTML('beforeEnd', '<div> <p>ชำระเงินได้ที่ประวัติการชำระเงินของท่านค่ะ </p></div>');
       }
     }, 1000);
   }
 
 
-  // cod() {
-  //   // this.displaydivqr = 'none'
-  //   // this.displaydivpromtpay = 'none';
-  //  ;
-  //   this.displaydivaddress = "block";
-  //   clearInterval(this.Intervalqr);
-   
-  //   if(this.secound == 0 &&  this.minutes == 0){
-  //       this.divchqr.nativeElement.remove()
-  //   }
-  //   else if(this.secound > 0 ){
-  //     this.countDowntime()
-  //   }
-
-
-
-  // }
+  
 
 
 }
