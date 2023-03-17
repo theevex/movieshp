@@ -1,5 +1,6 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, ElementRef, OnInit, ViewChild  } from '@angular/core';
 import { APIService } from 'src/app/service/api.service';
+
 
 @Component({
   selector: 'app-homepage',
@@ -7,6 +8,8 @@ import { APIService } from 'src/app/service/api.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
+  
+   @ViewChild('divMoveis') divMoveis:ElementRef
 
   constructor(private api: APIService) { }
 
