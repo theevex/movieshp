@@ -43,7 +43,7 @@ export class PopupComponent {
   createQr() {
     this.displaydivqr = 'block'
     this.displaydivpromtpay = 'none'
-    const mobileNumber = '095-594-1260'
+    const mobileNumber = '***-***-****'
     this.totalOrder = this.cvarrPrice[3]
     const amount = this.totalOrder
     const payload = generatePayload(mobileNumber, { amount })
