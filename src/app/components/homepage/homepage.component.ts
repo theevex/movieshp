@@ -44,10 +44,10 @@ export class HomepageComponent implements OnInit {
     }, 1000);
   }
    prevbt(){
-    this.divMoveis.nativeElement.scrollLeft -= 1000
+    this.divMoveis.nativeElement.scrollLeft -= 900
     }
   nextbt(){
-  this.divMoveis.nativeElement.scrollLeft += 1000
+  this.divMoveis.nativeElement.scrollLeft += 900
   }
   
 
