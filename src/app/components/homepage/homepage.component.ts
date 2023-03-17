@@ -40,6 +40,13 @@ export class HomepageComponent implements OnInit {
       window.location.reload();
     }, 1000);
   }
+   prevbt(){
+    this.divMoveis.nativeElement.scrollLeft -= 1000
+    }
+  nextbt(){
+  this.divMoveis.nativeElement.scrollLeft += 1000
+  }
+  
 
   
 }
