@@ -39,43 +39,43 @@ export class PopupComponent {
 
   
 
-  // createQr() {
-  //   this.displaydivqr = 'block'
-  //   this.displaydivpromtpay = 'none'
-  //   const mobileNumber = '095-594-1260'
-  //   this.cvarrPrice = JSON.parse(this.arrPrice!)
-  //   this.totalOrder = this.cvarrPrice[3]
-  //   const amount = this.totalOrder
-  //   const payload = generatePayload(mobileNumber, { amount })
+  createQr() {
+    this.displaydivqr = 'block'
+    this.displaydivpromtpay = 'none'
+    const mobileNumber = '095-594-1260'
+    this.cvarrPrice = JSON.parse(this.arrPrice!)
+    this.totalOrder = this.cvarrPrice[3]
+    const amount = this.totalOrder
+    const payload = generatePayload(mobileNumber, { amount })
 
-  //   QRCode.toString(payload, (err: any, svg: any) => {
-  //     this.divimgqr.nativeElement.insertAdjacentHTML('beforeEnd', '<div #svg>' + svg + '</div>');
-  //   })
+    QRCode.toString(payload, (err: any, svg: any) => {
+      this.divimgqr.nativeElement.insertAdjacentHTML('beforeEnd', '<div #svg>' + svg + '</div>');
+    })
 
-  //   this.countDowntime()
+    this.countDowntime()
 
-  // }
+  }
 
 
-  // countDowntime(){
-  //   this.Intervalqr = setInterval(() => {
-  //     if (this.minutes >= 0 && this.secound > 0) {
-  //       this.secound -= 1
-  //       // console.log(this.minute, this.secound)
-  //       if (this.minutes > 0 && this.secound == 0) {
-  //         this.minutes -= 1
-  //         this.secound = 59
-  //       }
-  //     }
-  //     else if (this.minutes == 0 && this.secound == 0) {
-  //       clearInterval(this.Intervalqr);
-  //       this.divchqr.nativeElement.remove();
-  //      this.displaydivqr = 'none'
-  //       this.displaydivpromtpay = 'auto';
-  //       // this.divqr.nativeElement.insertAdjacentHTML('beforeEnd', '<div> <p>ชำระเงินได้ที่ประวัติการชำระเงินของท่านค่ะ </p></div>');
-  //     }
-  //   }, 1000);
-  // }
+  countDowntime(){
+    this.Intervalqr = setInterval(() => {
+      if (this.minutes >= 0 && this.secound > 0) {
+        this.secound -= 1
+        // console.log(this.minute, this.secound)
+        if (this.minutes > 0 && this.secound == 0) {
+          this.minutes -= 1
+          this.secound = 59
+        }
+      }
+      else if (this.minutes == 0 && this.secound == 0) {
+        clearInterval(this.Intervalqr);
+        this.divchqr.nativeElement.remove();
+       this.displaydivqr = 'none'
+        this.displaydivpromtpay = 'auto';
+        // this.divqr.nativeElement.insertAdjacentHTML('beforeEnd', '<div> <p>ชำระเงินได้ที่ประวัติการชำระเงินของท่านค่ะ </p></div>');
+      }
+    }, 1000);
+  }
 
 
   // cod() {
