@@ -176,6 +176,10 @@
 
 
 @media only screen and (max-width: 600px) {
+   .imgcover>p {
+        font-size: 21px;
+        margin-top: 30%;
+    }
     .child-bannerpromo{
         width: 100%; 
     }
