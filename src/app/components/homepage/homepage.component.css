@@ -62,7 +62,7 @@
 }
 
 .divMoveis{
-    width: 95%;
+    width: 93%;
     height: 400px;
     display: flex;
     align-items: center;
@@ -167,6 +167,33 @@
     color: red;
     font-family: 'Rozha One', serif;
 }
+.prev{
+    width: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+}
+.prev > img{
+    width: 50%;
+}
+.next{
+    width: 3%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+     transform: rotate(180deg);
+}
+.next > img{
+    width: 50%;
+}
+.cttrending{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 
 
 @keyframes text{
@@ -181,9 +208,15 @@
         margin-top: 30%;
     }
     .child-bannerpromo{
-        width: 100%; 
+        width: 90%; 
     }
     .per{
         font-size: 50px;
+    }
+   .prev {
+        display: none;
+    }
+    .next{
+        display: none;
     }
   }
