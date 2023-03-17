@@ -173,3 +173,13 @@
     from {width: 0%;}
     to { width:100%}
 }
+
+
+@media only screen and (max-width: 600px) {
+    .child-bannerpromo{
+        width: 100%; 
+    }
+    .per{
+        font-size: 50px;
+    }
+  }
