@@ -43,7 +43,14 @@ export class SearchmovieComponent implements OnInit{
   };
 
   ngOnInit(): void {
-    this.search();
+    if (this.datasearch === "" || null) {
+      localStorage.setItem('pagenumber', "1")
+      this.router.navigate(['/home'])
+    }
+    else {
+        this.search();
+    }
+    
   }
 
   constructor(private api: APIService, private route: ActivatedRoute, private router: Router) {
@@ -55,7 +62,7 @@ export class SearchmovieComponent implements OnInit{
 
   search() {
     this.datasearch = this.route.snapshot.paramMap.get("namemovie")
-    if (this.datasearch == "") {
+    if (this.datasearch === "" || null) {
       localStorage.setItem('pagenumber', "1")
       this.router.navigate(['/home'])
     }

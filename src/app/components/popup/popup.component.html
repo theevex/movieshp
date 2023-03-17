@@ -2,54 +2,54 @@
     <div class="txtCheckout">
         <h1> Checkout </h1>
     </div>
+    <ng-template [ngIf]="cvarrPrice != null">
+        <div class="listorder">
+            <table>
+                <th> Movies </th>
+                <th> Amount </th>
+                <th> Price </th>
+                <tr *ngFor="let item of dataMovies | keyvalue">
+                    <td>{{item.value["name"]}}</td>
+                    <td>x {{item.value["amount"]}}</td>
+                    <td>{{item.value['price']}} ฿</td>
+                </tr>
+            </table>
 
-    <div class="listorder">
-        <table>
-            <th> Movies </th>
-            <th> Amount </th>
-            <th> Price </th>
-            <tr *ngFor="let item of dataMovies | keyvalue">
-                <td>{{item.value["name"]}}</td>
-                <td>x {{item.value["amount"]}}</td>
-                <td>{{item.value['price']}} ฿</td>
-            </tr>
-        </table>
-       
-    </div>
-    <div >
-        <p> Sub Total : {{cvarrPrice[0]}}  ฿</p>
-        <p> discount : - {{cvarrPrice[1]}}  ฿</p>
-        <p> amount : x {{cvarrPrice[2]}}  ฿</p>
-         <p> Order Total : {{cvarrPrice[3]}}  ฿</p>
-    </div>
+        </div>
+        <div>
+            <p> Sub Total : {{cvarrPrice[0]}} ฿</p>
+            <p> discount : - {{cvarrPrice[1]}} ฿</p>
+            <p> amount : x {{cvarrPrice[2]}} ฿</p>
+            <p> Order Total : {{cvarrPrice[3]}} ฿</p>
+        </div>
 
 
-    <div class="payment">
-        <h2> Payment Method </h2>
-        <button id="btnpromtpay" (click)="createQr()" [ngStyle]="{'pointer-events': displaydivpromtpay}"></button>
-        <!-- <button id="btncash" (click)="cod()"></button> -->
-        <div #qrcode id="qrcode" [ngStyle]="{'display': displaydivqr}">
-            <div #childqrcode class="child-qrcode">
-                <div #time>
-                    <p>กรุณาชำระเงินภายใน 0{{minutes}}:{{secound}}</p>
-                </div>
-                <div #imgqrcode class="imgqrcode">
-                    <img src="../../../assets/images/promt-pay-logo.jpeg" alt="">
-                </div>
-                <div>
-                    <p> ยอดชำระ : {{cvarrPrice[3]}}  ฿</p>
+        <div class="payment">
+            <h2> Payment Method </h2>
+            <!-- <button id="btnpromtpay" (click)="createQr()" [ngStyle]="{'pointer-events': displaydivpromtpay}"></button> -->
+            <!-- <button id="btncash" (click)="cod()"></button> -->
+            <div #qrcode id="qrcode" [ngStyle]="{'display': displaydivqr}">
+                <div #childqrcode class="child-qrcode">
+                    <div #time>
+                        <p>กรุณาชำระเงินภายใน 0{{minutes}}:{{secound}}</p>
+                    </div>
+                    <div #imgqrcode class="imgqrcode">
+                        <img src="../../../assets/images/promt-pay-logo.jpeg" alt="">
+                    </div>
+                    <div>
+                        <p> ยอดชำระ : {{cvarrPrice[3]}} ฿</p>
+                    </div>
                 </div>
             </div>
+            <div #address id="address" [ngStyle]="{'display': displaydivaddress}">
+                <input type="text" name="" id="">
+            </div>
         </div>
-        <div #address id="address" [ngStyle]="{'display': displaydivaddress}">
-            <input type="text" name="" id="">
+    </ng-template>
+
+
+        <div class="btnpopup">
+            <button id="checkout"> Checkout </button>
+            <button id="cancel" (click)="closepopup()"> cancle </button>
         </div>
-    </div>
-
-
-
-    <div class="btnpopup">
-        <button id="checkout"> Checkout </button>
-        <button id="cancel" (click)="closepopup()"> cancle </button>
-    </div>
 </div>

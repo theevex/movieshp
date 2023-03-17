@@ -21,6 +21,7 @@ export class HomepageComponent implements OnInit {
 
   ngOnInit(): void {
     this.Master.getMovies();
+    localStorage.setItem('pagenumber', '1')
   }
 
   Master = {

@@ -22,7 +22,7 @@ export class MoviesListComponent implements OnInit {
 
 
   constructor(private api: APIService) {
-    console.log(this.Page)
+   
   }
 
 

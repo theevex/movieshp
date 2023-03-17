@@ -15,6 +15,10 @@ const approutes: Routes = [
     redirectTo: '/home',
     pathMatch: 'full'
   },
+  { path: 'search',
+    redirectTo: '/home',
+    pathMatch: 'full'
+  },
   { path: '**', component: PagenofoundComponentComponent }
 ];
 

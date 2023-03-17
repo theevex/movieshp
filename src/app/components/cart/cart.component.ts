@@ -56,6 +56,7 @@ export class CartComponent implements OnInit {
       }, 100);
     }
     this.sumTotal()
+    console.log(this.countCart)
   }
 
 
