@@ -102,3 +102,42 @@
     from {width: 0%;}
     to { width: 80%;}
 }
+
+
+@media only screen and (max-width: 600px) {
+    .logo{
+        width: 65%;
+    }
+    .logo-img{
+        width: 15%;
+    }
+    .logo-txt{
+        width: 80%;
+    }
+    .menu{
+        width: 35%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+       
+    }
+    .divBtnCart > button{       
+        background-position: center;
+        background-size: 90%;
+    }
+    .divBtnCart > button > p{
+        padding-left: 35%;
+    }
+    .divBtnCart > button:hover{
+        background-size: 95%;
+    }
+    .divBtnCart > button{
+        background-size: 100%;
+    }
+    .divSearch > button{
+        background-size: 90%;
+    }
+    .divSearch > button:hover{
+        background-size: 95%;
+    }
+  }
