@@ -13,7 +13,7 @@
             <div class="prev" (click)="prevbt()">
                 <img src="../../../assets/images/left.png" alt="">
             </div>
-        <div class="divMoveis">
+        <div class="divMoveis"  #divMoveis>
             <div class="divMovieCard" *ngFor=" let item of master.movies">
                 <div class="divImageMovie">
                     <img src={{url.image+item.poster_path}}>
