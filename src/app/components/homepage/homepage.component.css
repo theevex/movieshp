@@ -133,7 +133,7 @@
     color: rgb(255, 25, 0);
  
     font-family: 'Rozha One', serif;
-    font-size: 8vh;
+    font-size: 100%;
     
 }
 .child-bannerpromo > .backdrop >button{
@@ -163,7 +163,7 @@
         box-sizing: border-box;
 }
 .per{
-    font-size: 20vh;
+    font-size: 100px;
     color: red;
     font-family: 'Rozha One', serif;
 }
