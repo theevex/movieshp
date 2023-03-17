@@ -9,6 +9,10 @@
         <div class="divTextTranding">
             <p> Trending </p>
         </div>
+      <div class="cttrending">
+            <div class="prev" (click)="prevbt()">
+                <img src="../../../assets/images/left.png" alt="">
+            </div>
         <div class="divMoveis">
             <div class="divMovieCard" *ngFor=" let item of master.movies">
                 <div class="divImageMovie">
@@ -18,6 +22,10 @@
                     <p> {{item.title}} </p>
                     <p id="vote_average"> vote average : {{item.vote_average}} </p>
                 </div>
+            </div>
+        </div>
+       <div class="next" (click)="nextbt()">
+                <img src="../../../assets/images/left.png" alt="">
             </div>
         </div>
     </div>
