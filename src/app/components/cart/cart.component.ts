@@ -262,7 +262,8 @@ export class CartComponent implements OnInit {
   }
 
    funcpopup(event:any){
-    console.log('hi',event)
+    // console.log('hi',event)
+    
     this.popup = event;
 
    }

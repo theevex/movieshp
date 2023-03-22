@@ -119,4 +119,8 @@ export class SearchmovieComponent implements OnInit{
     this.despopup = "none"
   }
 
+  totop() {
+    window.scrollTo(0, 0);
+  }
+
 }

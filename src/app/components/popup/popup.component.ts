@@ -35,11 +35,17 @@ export class PopupComponent {
   Total: any;
 
   constructor(private api: APIService, private rd: Renderer2) {
+    
     this.cvarrPrice = JSON.parse(this.arrPrice!)
     this.fetchfunc.getProvince();
     this.fetchfunc.getdistrict();
     this.fetchfunc.getSubdistrict();
     this.looparrprice()
+
+  }
+ 
+  ngOnChanges() {
+   window.location.reload()
 
   }
 
@@ -72,7 +78,7 @@ export class PopupComponent {
     getProvince: () => {
       this.api.get(this.master.Province).subscribe(res => {
         this.data.province = res
-        console.log(this.data.province)
+        // console.log(this.data.province)
       }, err => {
         console.log(err.error);
       }
@@ -81,7 +87,7 @@ export class PopupComponent {
     getdistrict: () => {
       this.api.get(this.master.District).subscribe(res => {
         this.data.district = res
-        console.log(this.data.district)
+        // console.log(this.data.district)
       }, err => {
         console.log(err.error);
       })
@@ -89,7 +95,7 @@ export class PopupComponent {
     getSubdistrict: () => {
       this.api.get(this.master.Subdistrict).subscribe(res => {
         this.data.Subdistrict = res
-        console.log(this.data.Subdistrict)
+        // console.log(this.data.Subdistrict)
       })
     }
 

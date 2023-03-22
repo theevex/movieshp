@@ -62,9 +62,9 @@
     color: white;
 }
 
-.divMoveis{
-    width: 93%;
-    height: 400px;
+.divMoveis {
+    width: 98%;
+    height: 100%;
     display: flex;
     overflow-x: scroll;
     position: absolute;
@@ -136,6 +136,7 @@
     color: rgb(255, 25, 0);
     font-family: 'Rozha One', serif;
     font-size: 100%;
+
 }
 
 .child-bannerpromo>.backdrop>button {
@@ -176,7 +177,7 @@
     margin: 0%;
 }
 
-/* .prev {  
+.prev {  
     transform: rotate(180deg);
     background-color: rgba(0, 1, 1, 0.516);
     z-index: 1;
@@ -200,7 +201,7 @@
 
 .next>img {
     width: 50%;
-} */
+}
 
 .cttrending {
     width: 100%;
@@ -227,32 +228,6 @@
     font-size: 15px;
     font-family: 'Archivo Black', sans-serif;
 }
-.prev{
-    width: 3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.prev > img{
-    width: 50%;
-}
-.next{
-    width: 3%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-     transform: rotate(180deg);
-}
-.next > img{
-    width: 50%;
-}
-.cttrending{
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 
 
 @keyframes text {
@@ -287,4 +262,3 @@
         display: none;
     }
 }
-

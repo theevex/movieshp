@@ -11,7 +11,7 @@
 
         <div class="cttrending" (mouseover)="showbt()" (mouseleave)="hidebt()">
             <div class="prev" (click)="prevbt()" [ngStyle]="{'width': widthdiv}">
-                <img src="../../../assets/images/" alt="">
+                <img src="../../../assets/images/left.png" alt="">
             </div>
             <div class="divMoveis" #divMoveis>
                 <div class="divMovieCard" *ngFor=" let item of master.movies">
@@ -26,10 +26,11 @@
                         <label>{{item.vote_average.toFixed(1)}}/10 </label>
                     </div>
                 </div>
+
             </div>
-  <div class="next" (click)="nextbt()" [ngStyle]="{'width': widthdiv}">
-            <img src="../../../assets/images/left.png" alt="">
-        </div>
+            <div class="next" (click)="nextbt()" [ngStyle]="{'width': widthdiv}">
+                <img src="../../../assets/images/left.png" alt="">
+            </div>
         </div>
       
     </div>
