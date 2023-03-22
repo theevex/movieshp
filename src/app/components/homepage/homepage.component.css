@@ -62,15 +62,9 @@
     color: white;
 }
 
-<<<<<<< HEAD
 .divMoveis{
     width: 93%;
     height: 400px;
-=======
-.divMoveis {
-    width: 98%;
-    height: 100%;
->>>>>>> c60e697 (“..”)
     display: flex;
     overflow-x: scroll;
     position: absolute;
@@ -142,11 +136,6 @@
     color: rgb(255, 25, 0);
     font-family: 'Rozha One', serif;
     font-size: 100%;
-<<<<<<< HEAD
-    
-=======
-
->>>>>>> c60e697 (“..”)
 }
 
 .child-bannerpromo>.backdrop>button {
@@ -177,22 +166,17 @@
     padding: 2%;
     box-sizing: border-box;
 }
-<<<<<<< HEAD
-.per{
-    font-size: 100px;
-=======
 
 .per {
     width: 100%;
     text-align: center;
     font-size: 10vw;
->>>>>>> c60e697 (“..”)
     color: red;
     font-family: 'Rozha One', serif;
     margin: 0%;
 }
 
-.prev {  
+/* .prev {  
     transform: rotate(180deg);
     background-color: rgba(0, 1, 1, 0.516);
     z-index: 1;
@@ -216,7 +200,7 @@
 
 .next>img {
     width: 50%;
-}
+} */
 
 .cttrending {
     width: 100%;
@@ -248,7 +232,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-   
 }
 .prev > img{
     width: 50%;
@@ -272,32 +255,6 @@
 
 
 
-<<<<<<< HEAD
-@keyframes text{
-    from {width: 0%;}
-    to { width:100%}
-}
-
-
-@media only screen and (max-width: 600px) {
-   .imgcover>p {
-        font-size: 21px;
-        margin-top: 30%;
-    }
-    .child-bannerpromo{
-        width: 90%; 
-    }
-    .per{
-        font-size: 50px;
-    }
-   .prev {
-        display: none;
-    }
-    .next{
-        display: none;
-    }
-  }
-=======
 @keyframes text {
     from {
         width: 0%;
@@ -330,4 +287,4 @@
         display: none;
     }
 }
->>>>>>> c60e697 (“..”)
+

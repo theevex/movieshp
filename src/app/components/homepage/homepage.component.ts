@@ -1,8 +1,6 @@
-<<<<<<< HEAD
-import { Component, ElementRef, OnInit, ViewChild  } from '@angular/core';
-=======
+
 import { Component, ElementRef, OnInit, ViewChild } from '@angular/core';
->>>>>>> c60e697 (“..”)
+
 import { APIService } from 'src/app/service/api.service';
 
 
@@ -12,12 +10,12 @@ import { APIService } from 'src/app/service/api.service';
   styleUrls: ['./homepage.component.css']
 })
 export class HomepageComponent implements OnInit {
-  
+   widthdiv:string = "0%"
    @ViewChild('divMoveis') divMoveis:ElementRef
 
-  widthdiv:string = "0%"
+ 
 
-  @ViewChild('divMoveis') divMoveis:ElementRef
+
 
 
 
@@ -53,12 +51,7 @@ export class HomepageComponent implements OnInit {
       window.location.reload();
     }, 1000);
   }
-   prevbt(){
-    this.divMoveis.nativeElement.scrollLeft -= 900
-    }
-  nextbt(){
-  this.divMoveis.nativeElement.scrollLeft += 900
-  }
+  
   
 
   hidebt(){

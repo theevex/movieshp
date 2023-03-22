@@ -8,23 +8,10 @@
         <div class="divTextTranding">
             <p> Trending </p>
         </div>
-<<<<<<< HEAD
-      <div class="cttrending">
-            <div class="prev" (click)="prevbt()">
-                <img src="../../../assets/images/left.png" alt="">
-            </div>
-        <div class="divMoveis"  #divMoveis>
-            <div class="divMovieCard" *ngFor=" let item of master.movies">
-                <div class="divImageMovie">
-                    <img src={{url.image+item.poster_path}}>
-                </div>
-                <div class="divNameMovie">
-                    <p> {{item.title}} </p>
-                    <p id="vote_average"> vote average : {{item.vote_average}} </p>
-=======
+
         <div class="cttrending" (mouseover)="showbt()" (mouseleave)="hidebt()">
             <div class="prev" (click)="prevbt()" [ngStyle]="{'width': widthdiv}">
-                <img src="../../../assets/images/left.png" alt="">
+                <img src="../../../assets/images/" alt="">
             </div>
             <div class="divMoveis" #divMoveis>
                 <div class="divMovieCard" *ngFor=" let item of master.movies">
@@ -38,31 +25,26 @@
                         <img src="../../../assets/images/star.png">
                         <label>{{item.vote_average.toFixed(1)}}/10 </label>
                     </div>
->>>>>>> c60e697 (“..”)
                 </div>
-
             </div>
-            <div class="next" (click)="nextbt()" [ngStyle]="{'width': widthdiv}">
-                <img src="../../../assets/images/left.png" alt="">
-            </div>
+  <div class="next" (click)="nextbt()" [ngStyle]="{'width': widthdiv}">
+            <img src="../../../assets/images/left.png" alt="">
         </div>
-       <div class="next" (click)="nextbt()">
-                <img src="../../../assets/images/left.png" alt="">
-            </div>
         </div>
+      
     </div>
-    <div class="bannerpromo">
+</div>
+<div class="bannerpromo">
 
-        <div class="child-bannerpromo">
-            <div class="backdrop">
-                <p> Summer Sale</p>
-                <p> up to </p>
-                <h1 class="per"> 20%off</h1>
-                <button routerLink="/movies">SHOP NOW</button>
-            </div>
-
+    <div class="child-bannerpromo">
+        <div class="backdrop">
+            <p> Summer Sale</p>
+            <p> up to </p>
+            <h1 class="per"> 20%off</h1>
+            <button routerLink="/movies">SHOP NOW</button>
         </div>
-
 
     </div>
+
+
 </div>

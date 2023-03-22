@@ -101,10 +101,6 @@
     to { width: 80%;}
 }
 
-<<<<<<< HEAD
-
-=======
->>>>>>> c60e697 (“..”)
 @media only screen and (max-width: 600px) {
     .logo{
         width: 65%;
@@ -126,13 +122,11 @@
         background-position: center;
         background-size: 90%;
     }
-<<<<<<< HEAD
+
     .divBtnCart > button > p{
         padding-left: 35%;
     }
-=======
 
->>>>>>> c60e697 (“..”)
     .divBtnCart > button:hover{
         background-size: 95%;
     }
@@ -145,8 +139,7 @@
     .divSearch > button:hover{
         background-size: 95%;
     }
-<<<<<<< HEAD
+
   }
-=======
-  }
->>>>>>> c60e697 (“..”)
+
+

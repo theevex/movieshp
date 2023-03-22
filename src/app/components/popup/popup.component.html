@@ -51,26 +51,11 @@
     </div>
     <div class="childcontent2">
         <div class="payment">
-<<<<<<< HEAD
-            <h2> Payment Method </h2>
-            <button id="btnpromtpay" (click)="createQr()" [ngStyle]="{'pointer-events': displaydivpromtpay}"></button>
-            <!-- <button id="btncash" (click)="cod()"></button> -->
-            <div #qrcode id="qrcode" [ngStyle]="{'display': displaydivqr}">
-                <div #childqrcode class="child-qrcode">
-                    <div #time>
-                        <p>กรุณาชำระเงินภายใน 0{{minutes}}:{{secound}}</p>
-                    </div>
-                    <div #imgqrcode class="imgqrcode">
-                        <img src="../../../assets/images/promt-pay-logo.jpeg" alt="">
-                    </div>
-                    <div>
-                        <p> ยอดชำระ : {{cvarrPrice[3]}} ฿</p>
-=======
             <ng-template [ngIf]="choosepm == 0">
                 <div id="choosepm">
-                      <p> Please select a payment method. </p>
+                    <p> Please select a payment method. </p>
                 </div>
-              
+
             </ng-template>
 
             <ng-template [ngIf]=" choosepm == 1 || 2 ">
@@ -82,7 +67,7 @@
 
                         <div #imgqrcode class="imgqrcode">
                             <img src="../../../assets/images/promt-pay-logo.webp" alt="">
-                        </div>  
+                        </div>
 
                         <div #time>
                             <p>กรุณาชำระเงินภายใน 0{{minutes}}:<ng-template [ngIf]=" secound.toString().length == 1">
@@ -92,7 +77,7 @@
                         <div>
                             <p> ยอดชำระ : {{Total}} ฿</p>
                         </div>
->>>>>>> c60e697 (“..”)
+                        >>>>>>> c60e697 (“..”)
                     </div>
                 </div>
                 <div [ngStyle]="{'display': displaydivaddress}" class="spinfo">
@@ -155,11 +140,6 @@
             </div>
 
         </div>
-<<<<<<< HEAD
-</div>
-=======
 
     </div>
-
 </div>
->>>>>>> c60e697 (“..”)
