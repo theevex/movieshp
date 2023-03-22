@@ -216,9 +216,10 @@ export class CartComponent implements OnInit {
       else {
         Price = parseInt(price)
         this.findDataPrice(Price, nameM)
+
       }
     }
-    if ("Backspace" == event.key && price == "") {
+    else if ("Backspace" == event.key && price == "") {
       alert("กรุณาเพิ่มราคาสินค้าก่อนทำการชำระเงิน")
       setTimeout(() => {
         window.location.reload();

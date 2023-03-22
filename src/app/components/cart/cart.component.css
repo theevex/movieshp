@@ -17,7 +17,7 @@
     background-repeat: no-repeat;
     background-position: center;
     width: 100%;
-    height: 30vh;
+    height: 200px;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -34,14 +34,14 @@
 
 .child-Cart-head {
     text-align: center;
-    font-size: 2.5rem;
+    font-size: 3rem;
     font-family: 'Lexend', sans-serif;
 }
 
 .Cart-body {
     margin: 2%;
     width: 90%;
-    height: 60vh;
+    /* height: 60vh; */
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -55,22 +55,21 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 2%;
-    box-sizing: border-box;
+
 }
 
 .divlistCart{
     width: 100%;
-    height: 280px;
+    height: 200px;
     overflow-y: scroll;
 }
 .divlistCart::-webkit-scrollbar { 
     background-color:transparent;
-   width: 10px;
+   width: 5px;
    
 }
 .divlistCart::-webkit-scrollbar-thumb {
-    background-color: rgba(193, 7, 7, 0.516);
+    background-color: rgba(255, 3, 3, 0.516);
     border-radius: 10px;
 }
 

@@ -1,4 +1,4 @@
-import { Component, ElementRef, EventEmitter, Output, Renderer2, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Input, Output, Renderer2, ViewChild } from '@angular/core';
 import * as generatePayload from 'promptpay-qr';
 import * as QRCode from 'qrcode';
 import { APIService } from 'src/app/service/api.service';
@@ -10,10 +10,8 @@ import { APIService } from 'src/app/service/api.service';
   styleUrls: ['./popup.component.css']
 })
 export class PopupComponent {
-  arrPrice = localStorage.getItem('totalPrice')
   cvarrPrice: any;
-  dataNameMovies = localStorage.getItem('arrDataCart');
-  dataMovies: {} = JSON.parse(this.dataNameMovies!);
+  dataMovies: {};
   totalOrder: number = 0;
   qrcode: any;
   minutes: number = 0;
@@ -27,29 +25,14 @@ export class PopupComponent {
   findSubdistrict: any;
   zipcode: any;
   choosepm: number = 0;
-  htmlToAdd: any;
-  renderer: any;
   subTotal: any;
   discount: any;
   amount: any;
   Total: any;
 
-  constructor(private api: APIService, private rd: Renderer2) {
-    
-    this.cvarrPrice = JSON.parse(this.arrPrice!)
-    this.fetchfunc.getProvince();
-    this.fetchfunc.getdistrict();
-    this.fetchfunc.getSubdistrict();
-    this.looparrprice()
-
-  }
  
-  ngOnChanges() {
-   window.location.reload()
-
-  }
-
-
+ 
+  @Input() dppopup:string = "";
   @Output() closePopup = new EventEmitter();
 
   @ViewChild('qrcode') divqr: ElementRef;
@@ -57,6 +40,23 @@ export class PopupComponent {
   @ViewChild('childqrcode') divchqr: ElementRef;
   @ViewChild('address') divaddress: ElementRef;
 
+
+  ngOnChanges(changes: any) {
+     if(changes["currentValue"] == "block"){
+        // console.log(ch["currentValue"])
+      let dataNameMovies = localStorage.getItem('arrDataCart');
+      this.dataMovies = JSON.parse(dataNameMovies!); 
+      let arrPrice = localStorage.getItem('totalPrice')
+      this.cvarrPrice = JSON.parse(arrPrice!)
+      this.looparrprice()
+      }
+  }
+  
+ constructor(private api: APIService, private rd: Renderer2) {
+    this.fetchfunc.getProvince();
+    this.fetchfunc.getdistrict();
+    this.fetchfunc.getSubdistrict();
+  }
 
   closepopup() {
     this.closePopup.emit('none')
@@ -106,7 +106,6 @@ export class PopupComponent {
 
   createQr() {
     this.displaydivqr = 'block'
-
     this.choosepm = 1
     this.displaydivaddress = "none";
     this.displaydivqr = "block";
