@@ -9,7 +9,9 @@ import { MoviesListComponent } from './components/movies-list/movies-list.compon
 import { CartComponent } from './components/cart/cart.component';
 import { SearchmovieComponent } from './components/searchmovie/searchmovie.component';
 import { PopupComponent } from './components/popup/popup.component';
-import { PagenofoundComponentComponent } from './components/pagenofound-component/pagenofound-component.component'
+import { PagenofoundComponentComponent } from './components/pagenofound-component/pagenofound-component.component';
+import { DescriptionMovieComponent } from './components/description-movie/description-movie.component';
+import {FormsModule} from '@angular/forms'
 
 
   
@@ -24,11 +26,13 @@ import { PagenofoundComponentComponent } from './components/pagenofound-componen
     SearchmovieComponent,
     PopupComponent,
     PagenofoundComponentComponent,
+    DescriptionMovieComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

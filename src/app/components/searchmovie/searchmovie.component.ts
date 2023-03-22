@@ -16,7 +16,9 @@ export class SearchmovieComponent implements OnInit{
   datasearch: any = this.route.snapshot.paramMap.get("namemovie");
   totalpage:number=0;
   totalresult:number=0;
-
+  arrMovie: any;
+  despopup: string = "block";
+  id:any;
 
   url = {
     image: 'https://image.tmdb.org/t/p/w500',
@@ -105,6 +107,16 @@ export class SearchmovieComponent implements OnInit{
     setTimeout(() => {
       window.location.reload();
     }, 500);
+  }
+
+  showdesc(id: any) {
+    this.arrMovie = this.data.moviesearch.filter((element: any) => element.id == id)
+    this.despopup = "block"
+    this.id = this.arrMovie[0].id
+    
+  }
+  hidedesc() {
+    this.despopup = "none"
   }
 
 }

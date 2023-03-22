@@ -9,6 +9,7 @@
     background-color: black;
     color: white;
     box-sizing: border-box;
+    font-family: 'Lexend', sans-serif;
 }
 
 .movieList-head {
@@ -36,7 +37,6 @@
 .child-movieList-head>p {
     text-align: center;
     font-size: 2.5rem;
-    font-family: 'Lexend', sans-serif;
 }
 
 .movieList-body {
@@ -44,7 +44,10 @@
     flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    font-family: 'Lexend', sans-serif;
+    
+}
+.content{
+    background-color: aqua;
 }
 
 .divMovieCard {
@@ -54,6 +57,7 @@
     align-self: start;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .imageMovie {
@@ -63,7 +67,7 @@
 
 .imageMovie>img {
     width: 100%;
-    height: 100%;
+    height: 100%; 
 }
 
 
@@ -75,6 +79,21 @@
     width: 100%;
     margin-top: 1%;
 }
+.rating{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.rating > img{
+    width: 10%;
+}
+.rating > label{
+    margin-left: 5%;
+    font-size: 15px;
+    font-family: 'Archivo Black', sans-serif;
+}
 
 .nameMovie>p {
     width: 100%;
@@ -82,43 +101,42 @@
     text-align: center;
     margin: 0%;
     margin-top: 5%;
-    color: white;
-    font-family: 'Lexend', sans-serif;
+    color: white; 
     overflow: hidden;
     text-overflow: ellipsis;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
-    display: -webkit-box;
 }
 
 
 .nameMovie>button {
-    margin-top: 5%;
+    margin-top: 2%;
     border: none;
-    width: 40px;
+    width: 20%;
     height: 40px;
     border-radius: 50px;
     background-image: url(../../../assets/images/add-to-cart.png);
-    background-size: 55%;
+    background-size: 60%;
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
-    border: none;
-    color: white;
-    font-family: 'Lexend', sans-serif;
-    font-size: 12px;
+    opacity: 0.6;
 }
 
 .nameMovie>button:hover {
-    border: 2px solid rgba(116, 4, 4, 0.609);
-    background-color:rgba(193, 7, 7, 0.609);
-    font-size: 13px;
+    opacity: 1;
 }
 
 .hidedivcart {
     display: none;
 }
-.btnchangepage{
+.hidedivdesc {
+    position: absolute;
+   width: 100%;
+  
+}
+
+.btnchangepage {
     width: 100%;
     margin-top: 5%;
     display: flex;
@@ -132,14 +150,15 @@
     justify-content: center;
     align-items: center;
 }
-.btn>p{
-    font-family: 'Lexend', sans-serif;
+
+.btn>p {   
     margin: 0%;
     text-align: center;
-    padding-left: 5% ;
-    padding-right: 5% ;
+    padding-left: 5%;
+    padding-right: 5%;
     box-sizing: border-box;
 }
+
 .btn>button {
     width: 100px;
     height: 50px;
@@ -147,19 +166,22 @@
     margin-bottom: 0%;
     border: 1px solid rgb(113, 19, 19);
     background-color: transparent;
-    color: rgb(113, 19, 19);;
+    color: rgb(113, 19, 19);
     font-family: 'Lexend', sans-serif;
 }
-.btn > button:hover{
+
+.btn>button:hover {
     color: red;
-    border:1px solid red;
+    border: 1px solid red;
 }
 
-.ictop>img{
+.ictop>img {
     max-width: 40px;
-    background-color:rgb(113, 19, 19);
+    background-color: rgb(113, 19, 19);
     border-radius: 50%;
 }
-.ictop>img:hover{
-    background-color:red;
+
+.ictop>img:hover {
+    background-color: red;
 }
+

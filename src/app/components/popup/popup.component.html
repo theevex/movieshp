@@ -1,30 +1,57 @@
-<div class="child-popup">
-    <div class="txtCheckout">
-        <h1> Checkout </h1>
+<div class="contentpopup">
+    <div class="childcontent1">
+        <div class="child-popup">
+            <div class="txtCheckout">
+                <h1> CHECKOUT </h1>
+            </div>
+
+            <div class="listorder">
+                <div class="head-list">
+                    <h4>Movies</h4>
+                    <h4>Amount </h4>
+                    <h4>Price </h4>
+                </div>
+                <ng-template [ngIf]="cvarrPrice != '' || dataMovies != ''">
+                    <div class="body-list">
+                        <div *ngFor="let item of dataMovies | keyvalue">
+                            <p>{{item.value["name"]}}</p>
+                            <p>x {{item.value["amount"]}}</p>
+                            <p>{{item.value['price']}} ฿</p>
+                        </div>
+                    </div>
+                    <div class="summary">
+                        <div id="txtsummary">
+                            <p> amount </p>
+                            <p> Sub Total </p>
+                            <p> discount </p>
+                            <p> Order Total</p>
+                        </div>
+                        <div>
+                            <p> x &nbsp;{{amount}}</p>
+                            <p> {{subTotal}} ฿</p>
+                            <p> - {{discount}} ฿</p>
+                            <p> {{Total}}฿</p>
+                        </div>
+
+                    </div>
+                </ng-template>
+            </div>
+
+            <div class="paymentmethod">
+                <div class="txtCheckout">
+                    <h3> PAYMENT METHOD </h3>
+                </div>
+                <div class="btpayment">
+                    <button id="btnpromtpay" (click)="createQr()" title="promtpay"></button>
+                    <button id="btncash" title="cash on delivery" (click)="cod()"> </button>
+                </div>
+
+            </div>
+        </div>
     </div>
-    <ng-template [ngIf]="cvarrPrice != null">
-        <div class="listorder">
-            <table>
-                <th> Movies </th>
-                <th> Amount </th>
-                <th> Price </th>
-                <tr *ngFor="let item of dataMovies | keyvalue">
-                    <td>{{item.value["name"]}}</td>
-                    <td>x {{item.value["amount"]}}</td>
-                    <td>{{item.value['price']}} ฿</td>
-                </tr>
-            </table>
-
-        </div>
-        <div>
-            <p> Sub Total : {{cvarrPrice[0]}} ฿</p>
-            <p> discount : - {{cvarrPrice[1]}} ฿</p>
-            <p> amount : x {{cvarrPrice[2]}} ฿</p>
-            <p> Order Total : {{cvarrPrice[3]}} ฿</p>
-        </div>
-
-
+    <div class="childcontent2">
         <div class="payment">
+<<<<<<< HEAD
             <h2> Payment Method </h2>
             <button id="btnpromtpay" (click)="createQr()" [ngStyle]="{'pointer-events': displaydivpromtpay}"></button>
             <!-- <button id="btncash" (click)="cod()"></button> -->
@@ -38,18 +65,101 @@
                     </div>
                     <div>
                         <p> ยอดชำระ : {{cvarrPrice[3]}} ฿</p>
+=======
+            <ng-template [ngIf]="choosepm == 0">
+                <div id="choosepm">
+                      <p> Please select a payment method. </p>
+                </div>
+              
+            </ng-template>
+
+            <ng-template [ngIf]=" choosepm == 1 || 2 ">
+                <div #qrcode id="qrcode" [ngStyle]="{'display': displaydivqr}">
+                    <ng-template [ngIf]=" this.minutes == 0 && this.secound == 0">
+                        <p> สามารถชำระเงินได้ที่ประวัติการสั่งซื้อของท่านค่ะ </p>
+                    </ng-template>
+                    <div #childqrcode class="child-qrcode">
+
+                        <div #imgqrcode class="imgqrcode">
+                            <img src="../../../assets/images/promt-pay-logo.webp" alt="">
+                        </div>  
+
+                        <div #time>
+                            <p>กรุณาชำระเงินภายใน 0{{minutes}}:<ng-template [ngIf]=" secound.toString().length == 1">
+                                    <label>0</label>
+                                </ng-template>{{secound}}</p>
+                        </div>
+                        <div>
+                            <p> ยอดชำระ : {{Total}} ฿</p>
+                        </div>
+>>>>>>> c60e697 (“..”)
                     </div>
                 </div>
-            </div>
-            <div #address id="address" [ngStyle]="{'display': displaydivaddress}">
-                <input type="text" name="" id="">
-            </div>
-        </div>
-    </ng-template>
+                <div [ngStyle]="{'display': displaydivaddress}" class="spinfo">
 
+                    <div #address id="address">
+                        <h2>CUSTOMER INFO</h2>
+                        <div class="address-detail">
+                            <p> Name / ชื่อผู้รับ</p>
+                            <input type="text" name="" id="">
+                            <p>Tel / เบอร์โทรผู้รับ</p>
+                            <input type="tel" name="" id="">
+                            <p>E-mail </p>
+                            <input type="email" name="" id="">
+                        </div>
+                    </div>
+                    <div #address id="address">
+                        <h2>SHIPPING ADDRESS</h2>
+                        <div class="address-detail">
+                            <p>Address / ที่อยู่</p>
+                            <input type="text" name="" id="">
+                            <div>
+                                <p>Province / จังหวัด</p>
+                                <select [(ngModel)]="optPv" (change)="selectedprovince()">
+                                    <option value=""> เลือกจังหวัด </option>
+                                    <option *ngFor="let item of data.province" value={{item.id}}> {{item.name_th}}
+                                    </option>
+                                </select>
+                            </div>
 
-        <div class="btnpopup">
-            <button id="checkout"> Checkout </button>
-            <button id="cancel" (click)="closepopup()"> cancle </button>
+                            <div>
+                                <p>District / แขวง </p>
+                                <select [(ngModel)]="optDt" (change)="selecteddistict()">
+                                    <option value=""> เลือกแขวง </option>
+                                    <option *ngFor="let item of finddistrict" value={{item.id}}> {{item.name_th}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div>
+                                <p>Subdistrict / เขต</p>
+                                <select [(ngModel)]="zipcode">
+                                    <option value=""> เลือกเขต </option>
+                                    <option *ngFor="let item of findSubdistrict" value={{item.zip_code}}>
+                                        {{item.name_th}}
+                                    </option>
+                                </select>
+                            </div>
+                            <div>
+                                <p>Postcode / รหัสไปรษณีย์</p>
+                                <input type="text" name="" id="" value={{zipcode}} readonly>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </ng-template>
+
+            <div class="btnpopup">
+                <button id="checkout"> Checkout </button>
+                <button id="cancel" (click)="closepopup()"> cancle </button>
+            </div>
+
         </div>
+<<<<<<< HEAD
 </div>
+=======
+
+    </div>
+
+</div>
+>>>>>>> c60e697 (“..”)

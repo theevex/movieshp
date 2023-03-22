@@ -1,23 +1,55 @@
-.child-popup{
-    margin: 0% auto;
-    padding: 2%;
-    width: 60%;
-    height: 100vh;
-    background-color: white;
-    color: black;
-    text-align: center;
-    box-shadow: 5px 5px 10px rgb(91, 91, 91);
-    overflow-y: scroll;
-}
-.txtCheckout{
+.contentpopup {
     width: 100%;
-    padding: 1%;
-    background-color: rgba(193, 7, 7, 0.974);
+    height: 100vh;
+     display: grid;
+     grid-template-columns: 65% 35%;
+     padding: 3%;
+     box-sizing: border-box;
+}
+
+.childcontent1{
+    width: 100%;
+    /* height: 100%;  */
+    backdrop-filter: blur(10px);
+    background-color: rgba(43, 43, 43, 0.213);
+    padding: 3%;
+    box-sizing: border-box;
+}
+.childcontent2{
+    width: 100%;
+    /* height: 100%; */
+    backdrop-filter: blur(10px);
+    background-color: rgba(43, 43, 43, 0.489);
+    display: flex;
+    flex-direction: column;
+}
+
+
+.child-popup {
+    text-align: center;
+    overflow-y: hidden;
+    color: white;
+}
+
+.child-popup::-webkit-scrollbar {
+    background-color: transparent;
+    width: 5px;
+}
+
+.child-popup::-webkit-scrollbar-thumb {
+    background-color: rgba(16, 255, 72, 0.516);
+}
+
+.txtCheckout {
+    width: 100%;
     font-weight: bold;
     color: white;
     box-sizing: border-box;
+    text-align: left;
+    padding-left: 5%;
 }
-#checkout{
+
+#checkout {
     width: 200px;
     height: 40px;
     font-family: 'Lexend', sans-serif;
@@ -28,28 +60,55 @@
     color: white;
     margin: 1%;
 }
-.listorder{
+
+.listorder {
     width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
 }
-.listorder > table{
+
+.listorder>table {
     width: 90%;
 }
-.listorder > table > th{
-    font-size: 25px;
-    width: 32%;
-    padding: 2%;
-    box-sizing: border-box;
-    border-bottom: 0.5 solid black;
+.head-list{
+    background-color: rgba(114, 21, 21, 0.774);
+    width: 100%;
+    display: grid;
+     grid-template-columns: 50% 25% 25%;
 }
-.listorder > table >  tr > td {
-    width: 32%;
-    padding: 2%;
-    box-sizing: border-box;
+.body-list{
+    height: 280px;
+    padding: 1%;
+    box-sizing: border-box; 
+    overflow-y: scroll;
 }
-#cancel{
+.body-list::-webkit-scrollbar {
+    background-color: transparent;
+    width: 3px;
+}
+.body-list::-webkit-scrollbar-thumb {
+    background-color: rgba(231, 20, 20, 0.516);
+    border-radius: 20px;
+}
+.body-list > div{
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 25% 25%;
+    font-size: 13px;
+}
+
+.summary{
+    display: grid;
+    grid-template-columns: 75% 25%;
+    font-size: 14px;
+    padding: 1%;
+    box-sizing: border-box; 
+}
+.summary > #txtsummary{
+   text-align: right;
+   font-weight: bold;
+   color: rgb(193, 7, 7);
+}
+
+#cancel {
     width: 200px;
     height: 40px;
     font-family: 'Lexend', sans-serif;
@@ -60,47 +119,156 @@
     color: white;
     margin: 1%;
 }
-.btnpopup{
-    width: 100%;
-    margin-top: 1%;
-}
-#btnpromtpay{
-   width: 200px;
-   height: 80px;
-   background-image: url(../../../assets/images/promt-pay-logo.jpeg);
-   background-position: center;
-   background-size: 60%;
-   background-repeat: no-repeat;
-   border: 0.5px solid rgba(0, 0, 0, 0.5);
-   background-color: transparent;
-   margin-right: 1%;
- }
- #btncash{
-   width: 200px;
-   height: 80px;
-   background-image: url(../../../assets/images/cash-on-delivery.png);
-   background-position: center;
-   background-size: 50%;
-   background-repeat: no-repeat;
-   border: 0.5px solid rgba(0, 0, 0, 0.5);
-   background-color: transparent;
- }
 
-#qrcode{
+.btnpopup {
+    justify-self: flex-end;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 5%;
+}
+
+.btpayment{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+#btnpromtpay {
+    width: 20%;
+    height: 80px;
+    background-image: url(../../../assets/images/promt-pay-logo.webp);
+    background-position: center;
+    background-size: 65%;
+    background-repeat: no-repeat;
+    border: 1px solid rgb(44, 44, 44);
+    background-color: transparent;
+    margin-right: 5%;
+}
+
+#btncash {
+    width: 20%;
+    height: 80px;
+    background-image: url(../../../assets/images/cash-on-delivery.png);
+    background-position: center;
+    background-size: 35%;
+    background-repeat: no-repeat;
+    border: 1px solid rgb(44, 44, 44);
+    background-color: transparent;
+}
+.paymentmethod{
+    width: 100%;
+    text-align: left;
+}
+
+.payment{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+#qrcode {
     display: none;
     width: 100%;
-    
+ 
 }
-.child-qrcode{
-    width: 100%;
+
+.child-qrcode {
+    width: 100%;  
+    height: 100%;
+    padding: 5%;
+    box-sizing: border-box;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.imgqrcode{
-    width: 30%;
+
+.imgqrcode {
+    width: 60%;
 }
-.imgqrcode > img{
+
+.imgqrcode>img {
     width: 100%;
+    margin-bottom: 5%;
+    filter: brightness(190%);
 }
+
+#address {
+    width: 100%;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    
+}
+
+.spinfo{
+    width: 80%;
+}
+
+.address-detail {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    text-align: left;
+}
+
+.address-detail>div>select {
+    width: 90%;
+    height: 40px;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    border: none;
+    border-bottom: 1px solid rgb(114, 21, 21);
+    background-color: transparent;
+    color: white;
+}
+
+.address-detail>div>input {
+    width: 90%;
+    height: 35px;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    border: none;
+    border-bottom: 1px solid rgb(114, 21, 21);
+    background-color: transparent;
+    color: white;
+
+}
+.address-detail> div>p {
+    font-size: 12px;
+    width: 100%;
+    margin: 0%;
+    margin-top: 10%;
+}
+
+.address-detail>input {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    font-family: 'Lexend', sans-serif;
+    grid-column-start: 1;
+    grid-column-end: 3;
+    border: none;
+    border-bottom: 1px solid rgb(114, 21, 21);
+    background-color: transparent;
+    color: white;
+}
+
+.address-detail>p {
+    width: 100%;
+    margin:  0% ;
+    margin-top: 10%;
+    color: white;  
+    font-size: 12px;
+}
+
+#choosepm{
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+

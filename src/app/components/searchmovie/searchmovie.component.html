@@ -5,19 +5,28 @@
 
     <ng-template [ngIf]="totalresult > 0" [ngIfElse]="resultnull">
           <div class="movieList-body" id="divmovielist">
-        <div class="divMovieCard" *ngFor=" let itemsearch of data.moviesearch">
-            <div class="imageMovie">
+        <div class="divMovieCard" *ngFor=" let itemsearch of data.moviesearch" (mouseleave)="hidedesc()">
+            <div class="imageMovie" (mouseover)="showdesc(idMovie.id)">
                 <ng-template [ngIf]="itemsearch.poster_path != null " [ngIfElse]="imgnull">
-                     
                       <img src={{url.image+itemsearch.poster_path}}>
                 </ng-template>
                 <ng-template #imgnull>
                     <img class="img-null" src="../../../assets/images/emonull.png" />
                 </ng-template>
                
-            </div>
-            <div class="nameMovie">
+            </div> 
+            <ng-template [ngIf]=" id == idMovie.id">
+                    <div class="hidedivdesc" [ngStyle]="{'display':despopup}">
+                        <app-description-movie [arrMovie]="arrMovie"></app-description-movie>
+                    </div>
+                </ng-template>
+               
+            <div class="nameMovie"  #idMovie id={{itemsearch.id}} >
                 <p #nameMovie id={{itemsearch.title}}>{{itemsearch.title}} </p>
+                <div class="rating">
+                    <img src="../../../assets/images/star.png">
+                    <label>{{itemsearch.vote_average.toFixed(1)}}/10 </label>
+                </div>
                 <button (click)="passData(nameMovie.id)"></button>
 
             </div>

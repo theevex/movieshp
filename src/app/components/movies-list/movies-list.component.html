@@ -5,29 +5,40 @@
         </div>
 
     </div>
+
+
+
     <div class="movieList-body" id="divmovielist">
-        <div class="divMovieCard" *ngFor=" let item of data.poppulaMovies">
-            <div class="imageMovie">
-               
+        <div class="divMovieCard" *ngFor=" let item of data.poppulaMovies" (mouseleave)="hidedesc()">
+            <div class="imageMovie" (mouseover)="showdesc(idMovie.id)">
                 <ng-template [ngIf]="item.poster_path !== null" [ngIfElse]="imgnull">
-                     <img src={{url.image+item.poster_path}}>
-                     
+                    <img src={{url.image+item.poster_path}}>
                 </ng-template>
                 <ng-template #imgnull>
                     <p>imgnull</p>
                 </ng-template>
+
             </div>
-            <div class="nameMovie">
-                <p #nameMovie id={{item.title}}>{{item.title}} </p>
+            <div class="nameMovie" #idMovie id={{item.id}} >
+                <p #nameMovie id={{item.title}}>{{item.title}}
+                </p>
+                <div class="rating">
+                    <img src="../../../assets/images/star.png">
+                    <label>{{item.vote_average.toFixed(1)}}/10 </label>
+                </div>
+
                 <button (click)="passData(nameMovie.id)"></button>
             </div>
-
+            <ng-template [ngIf]=" id == idMovie.id">
+                <div class="hidedivdesc" [ngStyle]="{'display':despopup}">
+                    <app-description-movie [arrMovie]="arrMovie"></app-description-movie>
+                </div>
+            </ng-template>
         </div>
-
     </div>
 
     <div class="btnchangepage">
-        <div class="btn"> 
+        <div class="btn">
             <ng-template [ngIf]="cvnum > 1" [ngIfElse]="hidebtnprev">
                 <button (click)="prevpage()"> Prev </button>
             </ng-template>
@@ -41,9 +52,6 @@
         </div>
     </div>
 
-
-
     <div class="hidedivcart"> <app-cart [dataMovie]="Movie"></app-cart></div>
-
 
 </div>

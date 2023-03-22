@@ -1,4 +1,4 @@
-import {  Component, OnInit } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { APIService } from 'src/app/service/api.service';
 
 @Component({
@@ -12,8 +12,11 @@ export class MoviesListComponent implements OnInit {
   Page = localStorage.getItem('pagenumber')
   Pagenumber: string = "";
   cvnum = Number(this.Page);
-  totalPage:number=0;
-  FormatTotalPage:any; 
+  totalPage: number = 0;
+  FormatTotalPage: any;
+  arrMovie: any;
+  despopup: string = "block";
+  id:any;
 
 
   ngOnInit(): void {
@@ -22,7 +25,7 @@ export class MoviesListComponent implements OnInit {
 
 
   constructor(private api: APIService) {
-   
+
   }
 
 
@@ -86,6 +89,15 @@ export class MoviesListComponent implements OnInit {
   }
 
 
+  showdesc(id: any) {
+    this.arrMovie = this.data.poppulaMovies.filter((element: any) => element.id == id)
+    this.despopup = "block"
+    this.id = this.arrMovie[0].id
+    
+  }
+  hidedesc() {
+    this.despopup = "none"
+  }
 
 
 

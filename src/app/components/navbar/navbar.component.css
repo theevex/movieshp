@@ -17,15 +17,12 @@
 }
 .logo-img{
     width: 5%;
-    background-image: url(../../../assets/images/3dglasses.png);
+    background-image: url(../../../assets/images/logoicon.png);
     background-position: center;
     background-size: 90%;
     background-repeat: no-repeat;
 }
-.logo-img > img{
-    width: 100%;
-    height: 80%;
-}
+
 .menu{
     width: 20%;
     display: flex;
@@ -53,9 +50,10 @@
 .divBtnCart > button > p{
     margin: 0%;
     width: auto;
-    padding-left: 20%;
+    padding-left: 10%;
     box-sizing: border-box;
-    font-size: 5px;
+    font-size: 12px;
+    font-weight: bold;
     color: white;
     font-family: 'Lexend', sans-serif;
    
@@ -85,7 +83,7 @@
 .divSearch > button{
     background-image: url(../../../assets/images/find.png);
     background-position: center;
-    background-size: 52%;
+    background-size: 60%;
     background-repeat: no-repeat;
     border: none;
     width: 20%;
@@ -103,7 +101,10 @@
     to { width: 80%;}
 }
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> c60e697 (“..”)
 @media only screen and (max-width: 600px) {
     .logo{
         width: 65%;
@@ -125,9 +126,13 @@
         background-position: center;
         background-size: 90%;
     }
+<<<<<<< HEAD
     .divBtnCart > button > p{
         padding-left: 35%;
     }
+=======
+
+>>>>>>> c60e697 (“..”)
     .divBtnCart > button:hover{
         background-size: 95%;
     }
@@ -140,4 +145,8 @@
     .divSearch > button:hover{
         background-size: 95%;
     }
+<<<<<<< HEAD
   }
+=======
+  }
+>>>>>>> c60e697 (“..”)

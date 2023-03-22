@@ -19,24 +19,25 @@
 }
 
 .movieList-body {
-    width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .divMovieCard {
     width: 15%;
-    max-height: 900px;
+    max-height: 500px;
     margin: 1%;
+    align-self: start;
     display: flex;
     flex-direction: column;
+    position: relative;
 }
 
 .imageMovie {
     width: 100%;
-    max-height: 100%;
-    margin: auto 0%;
+    max-height: 300px;
 }
 
 .imageMovie>img {
@@ -114,20 +115,20 @@
     background-repeat: no-repeat;
     background-position: center;
     background-color: transparent;
-    border: none;
-    color: white;
-    font-family: 'Lexend', sans-serif;
-    font-size: 12px;
+    opacity: 0.6;
 }
 
 .nameMovie>button:hover {
-    border: 2px solid rgba(116, 4, 4, 0.609);
-    background-color:rgba(193, 7, 7, 0.609);
-    font-size: 13px;
+    opacity: 1;
 }
 
 .hidedivcart {
     display: none;
+}
+.hidedivdesc {
+    position: absolute;
+    width: 100%;
+  
 }
 .btnchangepage{
     width: 100%;
@@ -172,4 +173,20 @@
 }
 .ictop>img:hover{
     background-color:red;
+}
+
+.rating{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 5%;
+}
+.rating > img{
+    width: 10%;
+}
+.rating > label{
+    margin-left: 5%;
+    font-size: 15px;
+    font-family: 'Archivo Black', sans-serif;
 }

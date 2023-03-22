@@ -20,7 +20,7 @@
     font-family: 'Lexend', sans-serif;
     font-weight: bold;
     opacity: 60%;
-    animation: text 8s ;
+    animation: text 8s;
     white-space: nowrap;
     overflow: hidden;
 }
@@ -41,59 +41,71 @@
     opacity: 100%;
 }
 
-.trandingMovies{
+.trandingMovies {
     width: 100%;
+    height: auto;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: black;
-    padding-top: 2% ;
-}
-.divTextTranding {
-    align-self: flex-start;
-    margin-left: 3% ;
+    padding-top: 2%;
 }
 
-.divTextTranding > p{
+.divTextTranding {
+    align-self: flex-start;
+    margin-left: 3%;
+}
+
+.divTextTranding>p {
     font-family: 'Lexend', sans-serif;
     font-size: 40px;
     color: white;
 }
 
+<<<<<<< HEAD
 .divMoveis{
     width: 93%;
     height: 400px;
+=======
+.divMoveis {
+    width: 98%;
+    height: 100%;
+>>>>>>> c60e697 (“..”)
     display: flex;
-    align-items: center;
-    flex-flow: row nowrap;
     overflow-x: scroll;
+    position: absolute;
+    scroll-behavior: smooth;
 }
-.divMoveis::-webkit-scrollbar { 
-    display: none; 
+
+.divMoveis::-webkit-scrollbar {
+    display: none;
 }
-.divMovieCard{
+
+.divMovieCard {
     width: 200px;
     height: 90%;
     display: flex;
     flex-direction: column;
-    justify-content:flex-start;
+    justify-content: flex-start;
     align-items: center;
     box-sizing: border-box;
     margin: 1%;
 }
-.divImageMovie{
+
+.divImageMovie {
     width: 190px;
     height: auto;
 }
-.divImageMovie > img{
-  width: 100%
+
+.divImageMovie>img {
+    width: 100%
 }
 
 .divNameMovie {
     width: 100%;
 }
-.divNameMovie > p{
+
+.divNameMovie>p {
     width: 100%;
     text-align: center;
     margin: 0%;
@@ -101,20 +113,17 @@
     color: white;
     font-family: 'Lexend', sans-serif;
 }
-#vote_average{
-    color: rgb(255, 25, 0);
-    font-size: 13px;
-}
-.bannerpromo{
+.bannerpromo {
     width: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 2%;
+    padding: 1%;
     box-sizing: border-box;
 }
-.child-bannerpromo{
-    width: 40%; 
+
+.child-bannerpromo {
+    width: 45%;
     height: 70vh;
     color: white;
     font-size: 50px;
@@ -126,46 +135,113 @@
     background-position: center;
 }
 
-.child-bannerpromo > .backdrop> p{
+.child-bannerpromo>.backdrop>p {
     width: 100%;
     text-align: center;
     margin: 0%;
     color: rgb(255, 25, 0);
- 
     font-family: 'Rozha One', serif;
     font-size: 100%;
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> c60e697 (“..”)
 }
-.child-bannerpromo > .backdrop >button{
-    margin-top: 5% ;
+
+.child-bannerpromo>.backdrop>button {
+    margin-top: 5%;
     font-size: 20px;
     width: 50%;
     height: 50px;
     font-family: 'Archivo Black', sans-serif;
     border: none;
-    background-color:transparent;
-    color:  rgb(255, 25, 0);
-    border: 1px solid  rgb(255, 25, 0);
+    background-color: transparent;
+    color: rgb(255, 25, 0);
+    border: 1px solid rgb(255, 25, 0);
 }
-.child-bannerpromo > .backdrop >button:hover{
-   background-color: rgb(255, 25, 0);
-    color: white; 
+
+.child-bannerpromo>.backdrop>button:hover {
+    background-color: rgb(255, 25, 0);
+    color: white;
 }
-.backdrop{
-        width: 100%;
-        height: 100%;
-        backdrop-filter: brightness(20%);
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        padding: 2%;
-        box-sizing: border-box;
+
+.backdrop {
+    width: 100%;
+    height: 100%;
+    backdrop-filter: brightness(20%);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2%;
+    box-sizing: border-box;
 }
+<<<<<<< HEAD
 .per{
     font-size: 100px;
+=======
+
+.per {
+    width: 100%;
+    text-align: center;
+    font-size: 10vw;
+>>>>>>> c60e697 (“..”)
     color: red;
     font-family: 'Rozha One', serif;
+    margin: 0%;
+}
+
+.prev {  
+    transform: rotate(180deg);
+    background-color: rgba(0, 1, 1, 0.516);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.prev>img {
+    width: 50%;
+}
+
+.next {
+  
+    background-color: rgba(0, 1, 1, 0.516);
+    z-index: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.next>img {
+    width: 50%;
+}
+
+.cttrending {
+    width: 100%;
+    height: 400px;
+    display: flex;
+    background-color:black;
+    justify-content: space-between;
+   position: relative;
+}
+
+.rating{
+    margin-top: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.rating > img{
+    width: 10%;
+}
+.rating > label{
+    color: white;
+    margin-left: 5%;
+    font-size: 15px;
+    font-family: 'Archivo Black', sans-serif;
 }
 .prev{
     width: 3%;
@@ -196,6 +272,7 @@
 
 
 
+<<<<<<< HEAD
 @keyframes text{
     from {width: 0%;}
     to { width:100%}
@@ -220,3 +297,37 @@
         display: none;
     }
   }
+=======
+@keyframes text {
+    from {
+        width: 0%;
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .imgcover>p {
+        font-size: 21px;
+        margin-top: 30%;
+    }
+
+    .child-bannerpromo {
+        width: 90%;
+    }
+
+    .per {
+        font-size: 50px;
+    }
+
+    .prev {
+        display: none;
+    }
+
+    .next {
+        display: none;
+    }
+}
+>>>>>>> c60e697 (“..”)
