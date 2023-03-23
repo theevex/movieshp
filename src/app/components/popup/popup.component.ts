@@ -52,6 +52,7 @@ export class PopupComponent {
       }
   }
   
+
  constructor(private api: APIService, private rd: Renderer2) {
     this.fetchfunc.getProvince();
     this.fetchfunc.getdistrict();
