@@ -42,8 +42,9 @@ export class PopupComponent {
 
 
   ngOnChanges(changes: any) {
-     if(changes["currentValue"] == "block"){
-        console.log(ch["currentValue"])
+      let ch = changes.dppopup["currentValue"]
+    //  console.log(ch)
+     if(ch == "block"){ 
       let dataNameMovies = localStorage.getItem('arrDataCart');
       this.dataMovies = JSON.parse(dataNameMovies!); 
       let arrPrice = localStorage.getItem('totalPrice')
